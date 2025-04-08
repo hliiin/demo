@@ -1,0 +1,31 @@
+
+项目创建:cmd 打开命令窗口后  npx create-react-app demo名字   
+项目运行：npm start
+
+
+问题1：创建项目出现
+`npm install --no-audit --save @testing-library/jest-dom@^5.14.1 @testing-library/react@^13.0.0 @testing-library/user-event@^13.2.1 web-vitals@^2.1.0` failed
+解决方法：npm uninstall react react-dom
+npm install react@18 react-dom@18
+
+问题2：Module not found: Error: Can't resolve 'web-vitals' in 'D:\10.17class\demo\node-project\src'
+解决：npm install --save web-vitals
+或者找到index.js文件 将相关的 import reportWebVitals from './reportWebVitals';reportWebVitals() 都给注释掉
+reportWebVitals() 是 React 提供的一个函数，用于收集和报告 Web 性能指标。它通常用来测量你的应用加载、交互等方面的性能表现，以便开发者能够了解并优化用户体验。
+ 
+
+
+antd组件库  npm install antd --save
+图标组件包 npm install @ant-design/icons --save
+
+
+
+-------------------------------------------------------------------
+nodejs 
+要实现一个包含书籍信息的后端数据接口（GET 请求，路径 /books），可以使用 Node.js 和 Express 框架，并结合一个数据库（如 MongoDB、MySQL 或其他关系型/非关系型数据库）来存储书籍数据。
+1. 安装必要的依赖 npm init -y
+npm install express body-parser mongoose cors
+npm i mongoose
+
+
+ 

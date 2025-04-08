@@ -1,0 +1,23 @@
+案例1：实现只有登陆后：才能访问某些路由
+1. 设置 Redux State 和 Action：
+	创建一个  Reducer，维护 isLogin 状态。
+	提供用于登录和注销的 Actions。
+2.将 Store 绑定到 React 应用**
+   	使用 Provider`将 Redux Store 传递给 React 应用的组件。
+3. 创建一个私有路由组件 (ProtectedRoute/PrivateRoute) ---自己命名：
+    	这个组件用于检查 isLogin 的状态，决定是否允许访问受保护的路由。
+4. 配置路由：
+ 	对公共页面（如登录页面）和受保护页面 配置。
+
+代码中存在的问题： 当登陆后，二级需要登陆访问的路由，about页面跳转不成功，原因是在 React Router 中，一级路由和二级路由是独立的，访问二级路由时可能会触发父级组件的重新渲染，进而导致 Redux 状态重置。  那么isLogin又变回了false
+解决办法：将redux中的isLogin做持久化处理 （可以先找一些文档试一下，怎么持久化保存数据到本地localStorage），这一步最后写也可以，上课讲的代码里没有做持久化处理。其他的都没有问题
+或者觉得完成不了，等我这变有时间我录一个持久化存储的视频和文档，可以在whatsApp上跟我说哈。
+
+案例2：实现简易的购物车：
+1. 设置 Redux State 和 Action：
+	创建一个  Reducer，里面有保存购物车的数据items，total总价格。
+	提供用于添加购物和和删除购物车商品的Actions。
+2.将 Store 绑定到 React 应用**
+   	使用 Provider`将 Redux Store 传递给 React 应用的组件。
+3、 Products.jsx 用来展示所有的商品，支持添加到购物车。Carts.jsx里面存放显示购物车的商品，支持删除购物车商品	 （代码中 我们把Products.jsx  直接和Carts.jsx 放在一个页面中）
+4、开始实现数据交互（不要忘了给页面添加路由）
